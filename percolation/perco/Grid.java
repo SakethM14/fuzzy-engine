@@ -1,4 +1,5 @@
-package perc;
+package perco;
+
 import java.util.Random;
 
 public class Grid{
@@ -10,17 +11,18 @@ public class Grid{
 
     public Grid(int length, int width, double probability) {
         cells = new int[length][width];
-        dim = {length, width};
+        dim = new int[]{length, width};
         p = probability;
-        fill(p);
+        fill();
         nodeCells = new Node[length][width];
+        toNode();
 
     }
     public void fill(){
         Random r = new Random();
         for (int i = 0; i < dim[0]; i++) {
             for (int j = 0; j < dim[1]; j++) {
-                if (nextDouble() < p){
+                if (r.nextDouble() < p){
                     cells[i][j] = 1;
                 }
                 else {
@@ -29,7 +31,7 @@ public class Grid{
             }
         }
     }
-    public Node[][] toNode(){
+    public void toNode(){
         for (int i = 0; i < dim[0]; i++) {
             for (int j = 0; j < dim[1]; j++) {
                 nodeCells[i][j] = new Node(cells[i][j], i, j);
@@ -49,16 +51,18 @@ public class Grid{
         }
     }
     public String toString(){
+        String s = "";
         for (int i = 0; i < dim[0]; i++) {
             for (int j = 0; j < dim[1]; j++) {
                 if (cells[i][j] == 1) {
-                    System.out.print("X ");
+                    s += "X  ";
                 }
                 else{
-                    System.out.print("O ");
+                    s += "O  ";
                 }
             }
-            System.out.println();
+            s += "\n";
         }
+        return s;
     }
 }

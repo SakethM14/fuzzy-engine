@@ -1,4 +1,6 @@
-package perc;
+package perco;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Node{
 
@@ -18,8 +20,12 @@ public class Node{
         this.id = null;
     }
     public Node(int status, int coordY, int coordX){
-        Node(status);
-        id = {coordY, coordX};
+        this.status = status;
+        this.checked = false;
+        this.neighbors = new HashSet<Node>();
+        this.top = false;
+        this.bottom = false;
+        id = new int[]{coordY, coordX};
     }
 
     public void top(){
@@ -29,10 +35,7 @@ public class Node{
         bottom = true;
     }
     public String toString(){
-        return id.toString()
+        return id.toString();
     }
 
-
 }
-
-
