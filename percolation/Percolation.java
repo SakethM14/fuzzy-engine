@@ -1,4 +1,4 @@
-package percolation;
+package perc;
 
 public class Percolation{
 

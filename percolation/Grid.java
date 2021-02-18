@@ -1,4 +1,4 @@
-package percolation;
+package perc;
 import java.util.Random;
 
 public class Grid{

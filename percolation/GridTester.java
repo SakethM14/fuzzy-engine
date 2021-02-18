@@ -1,4 +1,4 @@
-package percolation;
+package perc;
 
 public class GridTester{
 
@@ -7,5 +7,5 @@ public class GridTester{
         Grid g = new Grid(4, 4, 0.5);
         System.out.println(G);
     }
-    
+
 }
